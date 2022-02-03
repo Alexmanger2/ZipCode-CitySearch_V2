@@ -24,7 +24,7 @@ body{
 }
 
 
-h1,h3{
+h1,h3,h2{
   text-align: center;
   color:whitesmoke;
 }
@@ -58,3 +58,60 @@ h1,h3{
   color:lime;
 }
 
+
+/* .ul-city{
+  color:lime;
+  text-align: center;
+  list-style-type: none;
+  padding: 10px;
+ border:1px solid black;
+   
+
+}
+
+.zip-card{
+  color:whitesmoke;
+  background-color:#343a40;
+  left: 675px; 
+  width: 400px;
+} */
+
+
+.ul-city{
+  color:lime;
+  list-style-type: none;
+ margin-left: 780px;
+ padding: 8px;
+ border:1px solid black;
+ width:130px;
+}
+
+.searchTag{
+  margin-top: 80px;
+}
+
+
+.cityButton{
+       top:21%;
+       left:40%;
+       width:100px;
+       height:40px;
+       position: absolute;
+       /* background: orange;  */
+}
+.zipButton{
+  top:21%;
+  left:55%;
+  width:120px;
+  height:40px;
+  position: absolute;
+}
+
+.orTag{
+  top:21.5%;
+  left:49.8%;
+  width:120px;
+  height:40px;
+  position: absolute;
+  color:orange;
+}

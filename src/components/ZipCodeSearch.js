@@ -5,14 +5,13 @@ function ZipCodeSearch() {
   
   const [input,setInput] = useState("");
   const [zipcode,setZipcode] = useState([]);
-  const [display,setDisplay] = useState(false)
-  const [toggle,setToggle] = useState(0);
+  const [display,setDisplay] = useState(true);
 
+  
  const clickHandler = async (event) => {
     try {
         event.preventDefault();
         const response  = await axios.get(`http://ctp-zip-api.herokuapp.com/zip/${input}`)
-        // setZipcode(response.data)
         if(response.status !== 404){
             setZipcode(response.data)
             setDisplay(true)  
@@ -22,9 +21,8 @@ function ZipCodeSearch() {
         console.error(error.message)
     }
 }
-if(toggle === 0 && zipcode.length > 0){  //prevent initial render so we don't see no results first
-    setToggle(1);
-}
+
+
   return <Fragment>
 
         <div>
@@ -53,7 +51,7 @@ if(toggle === 0 && zipcode.length > 0){  //prevent initial render so we don't se
                       </div>
                      
                     ) 
-                }): toggle > 0 ?<h1>Results Not Found</h1>:null} 
+                }):<h1>Results Not Found</h1>} 
 
         </div>
 

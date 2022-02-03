@@ -3,25 +3,21 @@ import axios from 'axios';
 
 function CitySearch() {
   
-  const [input, setInput] = useState("");
   const [city,setCity] = useState("");
   const [cityData,setCityData] = useState([]);
-  const [display,setDisplay] = useState(false);
+  const [display,setDisplay] = useState(true);
 
-  
-  const handleClick = () => {
-    setCity(input.toUpperCase());
-    console.log(city)
-    getCity();
-  }
 
 const getCity = async () => {
-
         try {
             const response = await axios.get(`http://ctp-zip-api.herokuapp.com/city/${city}`)
-            if(response.status !== 404){
-            setCityData(response.data)}
+            if(response.status !== 404)
+            {
+            setCityData(response.data)
+            setDisplay(true)
+            }
         } catch (error) {
+            setDisplay(false)
             console.error(error.message)
         }
 
@@ -29,27 +25,25 @@ const getCity = async () => {
 }
 
   
-  
   return <Fragment>
+
 <div>
-    <input type="text" onChange={e => setInput(e.target.value)}/>
-    <button onClick={handleClick}>Search City</button>
+    <h3>City Search</h3>
+    <input className="inputField" type="text" onChange={e => setCity(e.target.value.toUpperCase())}/>
+    <button type="button" className="btn btn-outline-dark button" onClick={getCity}>Search City</button>
 </div>
-
+<br/><br/><br/>
 <div>
-
-    {cityData.map(data => {
+    {display === true ? cityData.map(data => {
         return(
-            <ul>
-                <li>ZipCode: {data}</li>
+        
+            <ul className="ul-city" key={data}>
+                <li >ZipCode: {data}</li>
             </ul>
+        
         )
-    })}        
-
-
+    }): <h2>No Results Found</h2>}        
 </div>
-
-
 
 
   </Fragment>;
