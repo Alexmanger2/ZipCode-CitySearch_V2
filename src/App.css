@@ -1,0 +1,60 @@
+.inputField{
+ 
+    position:  absolute;
+    top : 49px;
+    left: 690px;
+    width: 300px;
+    height:36.5px;
+    /* border:1px solid black; */
+
+
+}
+.button{
+  position:  absolute;
+  left: 990px;
+  top : 48px;
+  /* height:33px; */
+  /* background-color: red; */
+  color:white; 
+}
+
+
+body{
+  background-color:#343a40;
+}
+
+
+h1,h3{
+  text-align: center;
+  color:whitesmoke;
+}
+
+
+/* .card-header{
+  position:  absolute;
+  left: 700px;  
+}
+.card{
+ width: 400px;
+} */
+.card{
+  color:whitesmoke;
+  background-color:#343a40;
+  /* text-align: flex; */
+  left: 675px; 
+  width: 400px;
+  
+}
+
+.card-header{
+  background-color:grey;
+  /* text-align: flex; */
+  left: 675px;
+  width: 400px; 
+   /* border:2px solid whitesmoke; */
+}
+
+.ul{
+  color:lime;
+}
+
